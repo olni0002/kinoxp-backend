@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +19,7 @@ public class Movie {
     private int id;
     private String name;
     private Category category;
+    @Column(columnDefinition = "text")
     private String description;
     private Duration duration;
     private float price;
