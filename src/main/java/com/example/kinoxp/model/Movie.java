@@ -23,6 +23,8 @@ public class Movie {
     private String description;
     private Duration duration;
     private float price;
+    @Column(columnDefinition = "mediumblob")
+    private byte[] image;
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     private Set<Showing> showings;
@@ -73,5 +75,13 @@ public class Movie {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
