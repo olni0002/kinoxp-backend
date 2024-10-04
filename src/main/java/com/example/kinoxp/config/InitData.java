@@ -52,21 +52,21 @@ public class InitData implements CommandLineRunner {
 
         // Initialize Movies
         Movie movie1 = new Movie();
-        movie1.setName("Horror Movie");
+        movie1.setTitle("Horror Movie");
         movie1.setCategory(Category.HORROR);
         movie1.setDescription("A scary horror movie");
         movie1.setDuration(Duration.ofMinutes(120));
         movie1.setPrice(9.99f);
 
         Movie movie2 = new Movie();
-        movie2.setName("Romantic Movie");
+        movie2.setTitle("Romantic Movie");
         movie2.setCategory(Category.ROMANCE);
         movie2.setDescription("A lovely romance movie");
         movie2.setDuration(Duration.ofMinutes(110));
         movie2.setPrice(8.99f);
 
         Movie movie3 = new Movie();
-        movie3.setName("Action Movie");
+        movie3.setTitle("Action Movie");
         movie3.setCategory(Category.ACTION);
         movie3.setDescription("An intense action movie");
         movie3.setDuration(Duration.ofMinutes(130));
