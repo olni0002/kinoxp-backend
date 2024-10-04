@@ -57,6 +57,7 @@ public class InitData implements CommandLineRunner {
         movie1.setDescription("A scary horror movie");
         movie1.setDuration(Duration.ofMinutes(120));
         movie1.setPrice(9.99f);
+        movie1.setHrefPhoto("pictures/hamsta.PNG");
 
         Movie movie2 = new Movie();
         movie2.setTitle("Romantic Movie");
@@ -64,6 +65,7 @@ public class InitData implements CommandLineRunner {
         movie2.setDescription("A lovely romance movie");
         movie2.setDuration(Duration.ofMinutes(110));
         movie2.setPrice(8.99f);
+        movie2.setHrefPhoto("pictures/hamsta.PNG");
 
         Movie movie3 = new Movie();
         movie3.setTitle("Action Movie");
@@ -71,8 +73,75 @@ public class InitData implements CommandLineRunner {
         movie3.setDescription("An intense action movie");
         movie3.setDuration(Duration.ofMinutes(130));
         movie3.setPrice(10.99f);
+        movie3.setHrefPhoto("pictures/migom5år.PNG");
 
-        movieRepository.saveAll(Arrays.asList(movie1, movie2, movie3));
+        Movie movie4 = new Movie();
+        movie4.setTitle("Horror Movie");
+        movie4.setCategory(Category.HORROR);
+        movie4.setDescription("A scary horror movie");
+        movie4.setDuration(Duration.ofMinutes(120));
+        movie4.setPrice(9.99f);
+        movie4.setHrefPhoto("pictures/hamsta.PNG");
+
+        Movie movie5 = new Movie();
+        movie5.setTitle("Horror Movie");
+        movie5.setCategory(Category.HORROR);
+        movie5.setDescription("A scary horror movie");
+        movie5.setDuration(Duration.ofMinutes(120));
+        movie5.setPrice(9.99f);
+        movie5.setHrefPhoto("pictures/hamsta.PNG");
+
+        Movie movie6 = new Movie();
+        movie6.setTitle("Horror Movie");
+        movie6.setCategory(Category.HORROR);
+        movie6.setDescription("A scary horror movie");
+        movie6.setDuration(Duration.ofMinutes(120));
+        movie6.setPrice(9.99f);
+        movie6.setHrefPhoto("pictures/hamsta.PNG");
+
+        Movie movie7 = new Movie();
+        movie7.setTitle("Horror Movie");
+        movie7.setCategory(Category.HORROR);
+        movie7.setDescription("A scary horror movie");
+        movie7.setDuration(Duration.ofMinutes(120));
+        movie7.setPrice(9.99f);
+        movie7.setHrefPhoto("pictures/hamsta.PNG");
+
+        Movie movie8 = new Movie();
+        movie8.setTitle("Horror Movie");
+        movie8.setCategory(Category.HORROR);
+        movie8.setDescription("A scary horror movie");
+        movie8.setDuration(Duration.ofMinutes(120));
+        movie8.setPrice(9.99f);
+        movie8.setHrefPhoto("pictures/hamsta.PNG");
+
+        Movie movie9 = new Movie();
+        movie9.setTitle("Horror Movie");
+        movie9.setCategory(Category.HORROR);
+        movie9.setDescription("A scary horror movie");
+        movie9.setDuration(Duration.ofMinutes(120));
+        movie9.setPrice(9.99f);
+        movie9.setHrefPhoto("pictures/hamsta.PNG");
+
+        Movie movie10 = new Movie();
+        movie10.setTitle("Horror Movie");
+        movie10.setCategory(Category.HORROR);
+        movie10.setDescription("A scary horror movie");
+        movie10.setDuration(Duration.ofMinutes(120));
+        movie10.setPrice(9.99f);
+        movie10.setHrefPhoto("pictures/hamsta.PNG");
+
+        Movie movie11 = new Movie();
+        movie11.setTitle("Horror Movie");
+        movie11.setCategory(Category.HORROR);
+        movie11.setDescription("A scary horror movie");
+        movie11.setDuration(Duration.ofMinutes(120));
+        movie11.setPrice(9.99f);
+        movie11.setHrefPhoto("pictures/hamsta.PNG");
+
+
+
+        movieRepository.saveAll(Arrays.asList(movie1, movie2, movie3,movie4,movie5,movie6,movie7,movie8,movie9,movie11,movie10));
 
         // Initialize Theater
         Theater theater = new Theater();
