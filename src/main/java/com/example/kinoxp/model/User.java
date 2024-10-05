@@ -25,6 +25,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
 
+
     public int getId() {
         return id;
     }

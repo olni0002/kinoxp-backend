@@ -73,11 +73,5 @@ public class Showing {
         this.theater = theater;
     }
 
-    public Set<Reservation> getReservations() {
-        return reservations;
-    }
 
-    public void setReservations(Set<Reservation> reservations) {
-        this.reservations = reservations;
-    }
 }

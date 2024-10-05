@@ -23,11 +23,13 @@ public class Movie {
     private String description;
     private Duration duration;
     private float price;
-    @Column(columnDefinition = "mediumblob")
+    @Column(columnDefinition = "mediumblob", nullable = true)
     private byte[] image;
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
     private Set<Showing> showings;
+
+
 
     public int getId() {
         return id;
