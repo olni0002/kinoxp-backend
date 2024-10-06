@@ -16,12 +16,12 @@ public class Theater {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-/*
+
     @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL)
     private Set<Seat> seats;
 
 
- */
+
     @OneToMany(mappedBy = "theater", cascade = CascadeType.ALL)
     private Set<Showing> showings;
 
@@ -40,16 +40,10 @@ public class Theater {
     public void setName(String name) {
         this.name = name;
     }
-/*
-    public Set<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(Set<Seat> seats) {
-        this.seats = seats;
-    }
 
 
- */
+
+
+
 
 }

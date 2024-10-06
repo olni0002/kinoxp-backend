@@ -20,13 +20,18 @@ public class Seat {
     private int numberRow;
     private int numberSeat;
     private float price;
-/*
+
     @ManyToOne
     @JoinColumn(name = "theater_id")
     private Theater theater;
 
+    public void setTheater(Theater theater) {
+        this.theater = theater;
+    }
 
- */
+    public Theater getTheater() {
+        return theater;
+    }
 
     @OneToMany(mappedBy = "seat", cascade = CascadeType.ALL)
     private Set<Reservation> reservations;
@@ -62,17 +67,7 @@ public class Seat {
     public void setPrice(float price) {
         this.price = price;
     }
-/*
-    public Theater getTheater() {
-        return theater;
-    }
 
-    public void setTheater(Theater theater) {
-        this.theater = theater;
-    }
-
-
- */
 
 
 
