@@ -3,9 +3,7 @@ package com.example.kinoxp.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.kinoxp.service.ApiServiceGetMovie;
-import com.example.kinoxp.service.ApiServiceGetMovieImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.kinoxp.model.Movie;
 import com.example.kinoxp.repository.MovieRepository;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/movie")
 public class MovieRestController {
 
-    @Autowired
-    private ApiServiceGetMovieImpl apiServiceGetMovie;
     private MovieRepository movieRepository;
 
     public MovieRestController(MovieRepository movieRepository) {
