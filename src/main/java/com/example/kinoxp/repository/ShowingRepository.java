@@ -7,5 +7,6 @@ import com.example.kinoxp.model.Showing;
 import java.util.List;
 
 public interface ShowingRepository extends JpaRepository<Showing, Integer> {
-    //List<Showing> getShowingsByMovieId(Integer movieId);
+    List<Showing> getShowingsByMovieId(Integer movieId);
+    Showing getShowingById(Integer id);
 }

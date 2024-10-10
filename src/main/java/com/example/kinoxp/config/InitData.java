@@ -43,8 +43,8 @@ public class InitData implements CommandLineRunner {
         user2.setPhoneNumber(987654321);
 
         User user3 = new User();
-        user3.setEmail("user3@example.com");
-        user3.setPassword("password3");
+        user3.setEmail("1");
+        user3.setPassword("1");
         user3.setPrivilegeLevel(PrivilegeLevel.ADMINISTRATOR);
         user3.setPhoneNumber(555555555);
 
@@ -57,7 +57,6 @@ public class InitData implements CommandLineRunner {
         movie1.setDescription("A scary horror movie");
         movie1.setDuration(Duration.ofMinutes(120));
         movie1.setPrice(9.99f);
-        movie1.setHrefPhoto("pictures/hamsta.PNG");
 
         Movie movie2 = new Movie();
         movie2.setTitle("Romantic Movie");
@@ -65,130 +64,78 @@ public class InitData implements CommandLineRunner {
         movie2.setDescription("A lovely romance movie");
         movie2.setDuration(Duration.ofMinutes(110));
         movie2.setPrice(8.99f);
-        movie2.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie3 = new Movie();
-        movie3.setTitle("Action Movie");
-        movie3.setCategory(Category.ACTION);
-        movie3.setDescription("An intense action movie");
-        movie3.setDuration(Duration.ofMinutes(130));
-        movie3.setPrice(10.99f);
-        movie3.setHrefPhoto("pictures/migom5år.PNG");
-
-        Movie movie4 = new Movie();
-        movie4.setTitle("Horror Movie");
-        movie4.setCategory(Category.HORROR);
-        movie4.setDescription("A scary horror movie");
-        movie4.setDuration(Duration.ofMinutes(120));
-        movie4.setPrice(9.99f);
-        movie4.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie5 = new Movie();
-        movie5.setTitle("Horror Movie");
-        movie5.setCategory(Category.HORROR);
-        movie5.setDescription("A scary horror movie");
-        movie5.setDuration(Duration.ofMinutes(120));
-        movie5.setPrice(9.99f);
-        movie5.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie6 = new Movie();
-        movie6.setTitle("Horror Movie");
-        movie6.setCategory(Category.HORROR);
-        movie6.setDescription("A scary horror movie");
-        movie6.setDuration(Duration.ofMinutes(120));
-        movie6.setPrice(9.99f);
-        movie6.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie7 = new Movie();
-        movie7.setTitle("Horror Movie");
-        movie7.setCategory(Category.HORROR);
-        movie7.setDescription("A scary horror movie");
-        movie7.setDuration(Duration.ofMinutes(120));
-        movie7.setPrice(9.99f);
-        movie7.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie8 = new Movie();
-        movie8.setTitle("Horror Movie");
-        movie8.setCategory(Category.HORROR);
-        movie8.setDescription("A scary horror movie");
-        movie8.setDuration(Duration.ofMinutes(120));
-        movie8.setPrice(9.99f);
-        movie8.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie9 = new Movie();
-        movie9.setTitle("Horror Movie");
-        movie9.setCategory(Category.HORROR);
-        movie9.setDescription("A scary horror movie");
-        movie9.setDuration(Duration.ofMinutes(120));
-        movie9.setPrice(9.99f);
-        movie9.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie10 = new Movie();
-        movie10.setTitle("Horror Movie");
-        movie10.setCategory(Category.HORROR);
-        movie10.setDescription("A scary horror movie");
-        movie10.setDuration(Duration.ofMinutes(120));
-        movie10.setPrice(9.99f);
-        movie10.setHrefPhoto("pictures/hamsta.PNG");
-
-        Movie movie11 = new Movie();
-        movie11.setTitle("Horror Movie");
-        movie11.setCategory(Category.HORROR);
-        movie11.setDescription("A scary horror movie");
-        movie11.setDuration(Duration.ofMinutes(120));
-        movie11.setPrice(9.99f);
-        movie11.setHrefPhoto("pictures/hamsta.PNG");
 
 
 
-        movieRepository.saveAll(Arrays.asList(movie1, movie2, movie3,movie4,movie5,movie6,movie7,movie8,movie9,movie11,movie10));
+
+
+        movieRepository.saveAll(Arrays.asList(movie1, movie2));
 
         // Initialize Theater
-        Theater theater = new Theater();
-        theater.setName("Main Theater");
-        theaterRepository.save(theater);
+        Theater theater1 = new Theater();
+        theater1.setName("big Theater");
+        theaterRepository.save(theater1);
 
+        Theater theater2 = new Theater();
+        theater2.setName("small Theater");
+        theaterRepository.save(theater2);
+
+        for (int y = 1; y <= 12; y++) {
+            for (int x = 1; x <= 20; x++) {
+                Seat seat1 = new Seat();
+                seat1.setId(0);
+                seat1.setNumberSeat(x);
+                seat1.setNumberRow(y);
+                if(y<11){
+                    seat1.setPrice(15);
+                }else {
+                    seat1.setPrice(10f);
+                }
+
+                seat1.setTheater(theater1);
+                seatRepository.save(seat1);
+            }
+        }
         // Initialize Seats
-        Seat seat1 = new Seat();
-        seat1.setNumberRow(1);
-        seat1.setNumberSeat(1);
-        seat1.setPrice(12.50f);
-        seat1.setTheater(theater);
 
-        Seat seat2 = new Seat();
-        seat2.setNumberRow(1);
-        seat2.setNumberSeat(2);
-        seat2.setPrice(12.50f);
-        seat2.setTheater(theater);
+        for (int y = 1; y <= 16; y++) {
+            for (int x = 1; x <= 25; x++) {
+                Seat seat2 = new Seat();
+                seat2.setId(0);
+                seat2.setNumberSeat(x);
+                seat2.setNumberRow(y);
 
-        seatRepository.saveAll(Arrays.asList(seat1, seat2));
+                if(y<15){
+                    seat2.setPrice(15);
+                }else {
+                    seat2.setPrice(10f);
+                }
+
+                seat2.setTheater(theater2);
+                seatRepository.save(seat2);
+            }
+        }
+
+
+        System.out.println(seatRepository.findAll().size());
+
+
 
         // Initialize Showings
         Showing showing1 = new Showing();
         showing1.setDate(LocalDate.now());
         showing1.setTime(LocalTime.of(19, 0));
         showing1.setMovie(movie1);
-        showing1.setTheater(theater);
+        showing1.setTheater(theater1);
 
         Showing showing2 = new Showing();
         showing2.setDate(LocalDate.now());
         showing2.setTime(LocalTime.of(21, 0));
         showing2.setMovie(movie2);
-        showing2.setTheater(theater);
+        showing2.setTheater(theater2);
 
         showingRepository.saveAll(Arrays.asList(showing1, showing2));
 
-        // Initialize Reservations
-        Reservation reservation1 = new Reservation();
-        reservation1.setShowing(showing1);
-        reservation1.setSeat(seat1);
-        reservation1.setUser(user1);
 
-        Reservation reservation2 = new Reservation();
-        reservation2.setShowing(showing2);
-        reservation2.setSeat(seat2);
-        reservation2.setUser(user2);
-
-        reservationRepository.saveAll(Arrays.asList(reservation1, reservation2));
     }
 }
