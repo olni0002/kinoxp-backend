@@ -7,6 +7,15 @@ import com.example.kinoxp.service.ApiServiceGetMovie;
 import com.example.kinoxp.service.ApiServiceGetMovieImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.kinoxp.model.Movie;
 import com.example.kinoxp.repository.MovieRepository;
@@ -16,8 +25,6 @@ import com.example.kinoxp.repository.MovieRepository;
 @CrossOrigin("*")
 public class MovieRestController {
 
-    @Autowired
-    private ApiServiceGetMovieImpl apiServiceGetMovie;
     private MovieRepository movieRepository;
 
     public MovieRestController(MovieRepository movieRepository) {
