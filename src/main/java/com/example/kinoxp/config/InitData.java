@@ -2,9 +2,12 @@ package com.example.kinoxp.config;
 
 import com.example.kinoxp.model.*;
 import com.example.kinoxp.repository.*;
+
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
 import java.time.Duration;
 import java.time.LocalDate;
@@ -23,9 +26,6 @@ public class InitData implements CommandLineRunner {
     private SeatRepository seatRepository;
     @Autowired
     private ShowingRepository showingRepository;
-    @Autowired
-    private ReservationRepository reservationRepository;
-
 
     @Override
     public void run(String... args) throws Exception {
@@ -57,6 +57,7 @@ public class InitData implements CommandLineRunner {
         movie1.setDescription("A scary horror movie");
         movie1.setDuration(Duration.ofMinutes(120));
         movie1.setPrice(9.99f);
+        movie1.setImage(FileUtils.readFileToByteArray(ResourceUtils.getFile("classpath:posters/Theterrorposter.jpg")));
 
         Movie movie2 = new Movie();
         movie2.setTitle("Romantic Movie");
@@ -64,10 +65,7 @@ public class InitData implements CommandLineRunner {
         movie2.setDescription("A lovely romance movie");
         movie2.setDuration(Duration.ofMinutes(110));
         movie2.setPrice(8.99f);
-
-
-
-
+        movie2.setImage(FileUtils.readFileToByteArray(ResourceUtils.getFile("classpath:posters/His_Girl_Friday_(1940_poster)_crop.jpg")));
 
         movieRepository.saveAll(Arrays.asList(movie1, movie2));
 

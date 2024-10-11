@@ -3,8 +3,6 @@ package com.example.kinoxp.controller;
 import com.example.kinoxp.model.Reservation;
 import com.example.kinoxp.service.ApiServiceGetResevation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
